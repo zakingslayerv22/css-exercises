@@ -1,0 +1,19 @@
+.pink-background {
+    background-color: rgb(176, 61, 80);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, DejaVu Sans, sans-serif
+}
+
+.pink-background.font-size {
+    font-size: 24px;
+}
+
+#blue-text-font-size {
+    color:rgb(0, 0, 255);
+    font-size: 36px;
+}
+
+#light-green-background {
+    background-color: rgb(127, 233, 127);
+    font-size: 24px;
+    font-weight: bold;
+}
