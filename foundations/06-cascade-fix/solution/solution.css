@@ -34,9 +34,29 @@ div.text {
     font-weight: 800;
   } 
 
-  Then we placed it after the .para selector, taking advantage of the rule order since both selectors have the same specificity. 
+  ++ Then we placed it after the .para selector, taking advantage of the rule order since both selectors have the same specificity. 
   
-  Another solution would be keeping it in its original place and just chaining selectors, giving this rule a higher specificity:
+  EXPLANATION: The rule order states that the one that comes last takes precedence. so since para and small para has the same
+  specificity, if we take the .small-para class below the .para class, then CSS will execute the last one which is
+  .small-para 
+  (<p class="para">I'm just a paragraph with extra bold text!</p>
+    <p class="para small-para">I'm a smaller paragraph, also with extra bold text!</p>)
+
+  Observe that in the original css, .para was below .small-para and that is why the small paragraph 
+  has a will display a font of 22px instead of the 14px assigned to it(because the small paragraph has .para 
+  and .small para styles and its obeying the order rule. To make small paragraph to display a 14px font size, 
+  we have to take it below .para so it obeys the order rule
+  )
+  
+  ++ Another solution would be keeping it in its original place and just chaining selectors, giving this rule a higher specificity:
+
+EXPLANATION: Chaining selectors would allow us to give a unique style to an element that has a common class 
+and the common class has been given a different style. Chaining selectors would let us retain the unique style
+and also the different class given by the common style. So we just chain the p element to the small-para class 
+and it would give it a higher specificity and would thus take precedence because it is kind of closer. 
+Chaining the classes is still a solution. 
+
+(<p class="para small-para">I'm a smaller paragraph, also with extra bold text!</p>)
 
   p.small-para {
     font-size: 14px;
@@ -58,9 +78,14 @@ div.text {
     font-weight: bold;
   } 
 
-  Then we used an ID selector instead, since it has a higher specificity than the .button selector.
+  ++ Then we used an ID selector instead, since it has a higher specificity than the .button selector.
 
-  Other solutions would be to simply move the .confirm rule below the .button rule, or to use the .button.confirm selector without moving it:
+  EXPLANATION: The bone of contention here is that the both buttons have the .button class. the first
+  button has .confirm class and it is required to be green (background: green). But .button a background
+  color of white (background-color: rgb(0, 0, 0)) and this is the style that is being applied by the order rule becomes the .button style
+  comes last. The first button has the confirm-button ID since it has a higher specificity.
+
+  Other solutions would be to simply move the .confirm rule below the .button rule, or to use the .button.confirm (Chaining) selector without moving it:
 
   .button.confirm {
     background: green;
@@ -87,6 +112,11 @@ div.text {
   Then we added another selector to create a descendant combinator. If we only created a descendant combinator, the specificity would be tied with the
   div.text selector and it would come down to rule order, and if we only moved it the div.text selector would still have a higher specificity.
   
+EXPLANATION: The bone of contention is the font-size. if we added div .child (descendant) without putting 
+it below div.text(chaining), the div.text will have a higher specificity. Why? Because the .text class comes 
+the child class? (<div class="text child">I'm a smaller child div with extra bold text.</div>)
+
+
   Another solution would be to keep the rule where it was and just replace the div selector with the .text selector:
 
   .text .child {
