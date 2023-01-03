@@ -1,0 +1,17 @@
+/* Any of the two solutions can work */
+
+.container .text {
+    background-color: #f9e804;
+    color: rgb(100%, 0%, 0%);
+    font-size: 20px;
+    text-align: center;
+
+}
+
+/* .container p {
+    background-color: #f9e804;
+    color: rgb(100%, 0%, 0%);
+    font-size: 20px;
+    text-align: center;
+
+} */
