@@ -23,6 +23,9 @@ body {
   border: 3px solid brown;
   width: 200px;
   /* CHANGE ME */
-  padding: 23px;
-  margin-left: 320px;
+  padding: 32px;
+  /* why auto? 320px; or so would have worked  */
+  margin-left: auto;
+
+  
 }
