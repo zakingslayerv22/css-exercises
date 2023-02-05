@@ -7,7 +7,7 @@ body {
   width: 400px;
   background: #fff;
   margin: 16px auto;
-  padding: 1px 8px 8px 8px;
+  padding: 8px;
 }
 
 .title {
@@ -15,6 +15,7 @@ body {
   margin-bottom: 8px;
   font-size: 16px;
   padding: 8px;
+  margin-top: 0;
 }
 
 .content {
@@ -32,7 +33,6 @@ body {
 button {
   background: white;
   border: 1px solid #eee;
-  margin: 8px 24px;
   display: block;
   margin: 0 auto;
 }
