@@ -24,7 +24,6 @@ body {
   gap: 16px;
 }
 
-
 .links{
   display: flex;
   gap: 16px;
@@ -35,11 +34,7 @@ body {
   at the beginning of the links? */
 }
 
-.right-items {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+
 
 .profile-image {
   background: rebeccapurple;
